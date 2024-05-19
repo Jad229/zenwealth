@@ -2,7 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Template</title>
+    <title>ZenWealth</title>
   </head>
-  <body></body>
+  <body>
+    <div class="budget-container">
+      <header class="budget-header">
+        <div class="balance">
+          <h2 class="title">Balance</h2>
+          <p class="value"></p>
+        </div>
+        <div class="account">
+          <div class="income">
+            <h2 class="title">Income</h2>
+            <p class="income-total"></p>
+          </div>
+          <div class="chart"></div>
+          <div class="outcome">
+            <h2 class="title">Outcome</h2>
+            <p class="outcome-total"></p>
+          </div>
+        </div>
+      </header>
+      <main class="budget-dashboard">
+        <h1 class="dash-title">Dashboard</h1>
+        <div class="toggle">
+          <button class="tab">Expenses</button>
+          <button class="tab active">Income</button>
+          <button class="tab">All</button>
+        </div>
+        <section id="expense" class="hide"></section>
+        <section id="income">
+          <ul class="list">
+            <li id="0" class="income"></li>
+          </ul>
+          <div class="input">
+            <input
+              type="text"
+              name="title"
+              id="income-title-input"
+              placeholder="Title"
+            />
+            <input
+              type="number"
+              name="amount"
+              id="income-amount-input"
+              placeholder="$0"
+            />
+            <button class="add-income">ADD</button>
+          </div>
+        </section>
+        <section id="all" class="hide"></section>
+      </main>
+    </div>
+  </body>
 </html>
