@@ -24,32 +24,19 @@
         </section>
       </section>
       <main class="budget-dashboard">
-        <h1 class="dash-title">Dashboard</h1>
-        <nav class="toggle">
-          <button class="tab">Expenses</button>
-          <button class="tab active">Income</button>
-          <button class="tab">All</button>
-        </nav>
+        <div class="budget-dashboard--header">
+          <h1 class="dash-title">Dashboard</h1>
+          <nav class="toggle">
+            <button class="tab">Expenses</button>
+            <button class="tab active">Income</button>
+            <button class="tab">All</button>
+          </nav>
+        </div>
         <section id="expense" class="hide"></section>
         <section id="income">
           <ul class="list">
             <li id="0" class="income"></li>
           </ul>
-          <div class="input">
-            <input
-              type="text"
-              name="title"
-              id="income-title-input"
-              placeholder="Title"
-            />
-            <input
-              type="number"
-              name="amount"
-              id="income-amount-input"
-              placeholder="$0"
-            />
-            <button class="add-income">ADD</button>
-          </div>
         </section>
         <section id="all" class="hide"></section>
       </main>
