@@ -37,6 +37,21 @@ body {
   border-radius: 30px;
 }
 
+.balance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.balance .title {
+  font-size: 0.9rem;
+}
+
+.budget-header .value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .account {
   width: 100%;
   display: flex;
@@ -44,11 +59,7 @@ body {
 }
 
 .account .title {
-  font-size: 12px;
-}
-
-.balance .title {
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .budget-dashboard {
@@ -87,8 +98,20 @@ body {
   color: #222;
 }
 
-.budget-dashboard .income {
-  flex-grow: 1;
+.budget-dashboard #income .input {
+  position: absolute;
   display: flex;
-  justify-content: flex-end;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid gainsboro;
+}
+
+.budget-dashboard #income .input > * {
+  width: 33.3%;
+  border: none;
+  padding: 12px;
+}
+
+.budget-dashboard #income .add-income-btn {
+  background-color: greenyellow;
 }
