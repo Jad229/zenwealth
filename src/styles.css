@@ -98,6 +98,10 @@ body {
   color: #222;
 }
 
+.budget-dashboard .hide {
+  display: none;
+}
+
 .budget-dashboard #income .input {
   position: absolute;
   display: flex;
