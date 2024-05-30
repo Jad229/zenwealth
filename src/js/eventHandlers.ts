@@ -16,13 +16,8 @@ import {
   updateUI,
 } from "./ui";
 
-interface Entry {
-  type: string;
-  title: string;
-  amount: number;
-}
-
-const ENTRY_LIST: Entry[] = [];
+import { ENTRY_LIST } from "./data";
+import { Entry } from "./types";
 
 expenseBtn?.addEventListener("click", () => {
   active(expenseBtn);
@@ -52,7 +47,6 @@ addIncome?.addEventListener("click", () => {
     amount: parseFloat(incomeAmount?.value) || 0,
   };
 
-  console.log(income);
   ENTRY_LIST.push(income);
   updateUI();
   // clearInput([incomeTitle, incomeAmount]); // Uncomment when clearInput is implemented in the main codebase
