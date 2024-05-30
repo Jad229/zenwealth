@@ -49,5 +49,5 @@ addIncome?.addEventListener("click", () => {
 
   ENTRY_LIST.push(income);
   updateUI();
-  // clearInput([incomeTitle, incomeAmount]); // Uncomment when clearInput is implemented in the main codebase
+  // clearInput([incomeTitle, incomeAmount]);
 });

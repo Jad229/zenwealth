@@ -1,5 +1,6 @@
 // ui.ts
 import { ENTRY_LIST } from "./data";
+import { Entry } from "./types";
 
 const balanceEl = document.querySelector<HTMLElement>(".balance .value");
 
@@ -68,14 +69,20 @@ export const hide = function (elements: Array<HTMLElement | null>) {
 };
 
 export const updateUI = function () {
+  // guard against null element
+  if (incomeList) incomeList.innerHTML = "";
+
   ENTRY_LIST.forEach((entry) => {
+    const listEl = createListElement(entry);
+  });
+
+  function createListElement(entry: Entry) {
     const listEl = document.createElement("li");
     const titleEl = document.createElement("p");
 
     titleEl.innerText = entry.title;
     listEl.appendChild(titleEl);
-    incomeList?.appendChild(listEl);
-  });
+  }
 };
 
 export const clearInput = function (inputs: HTMLInputElement[]) {

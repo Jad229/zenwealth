@@ -75,25 +75,40 @@ body {
   height: 60%;
 }
 
+/* Dashboard Header Styles */
+
+.budget-dashboard--header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.budget-dashboard section {
+  width: 100%;
+  padding-block: 12px;
+}
+
+/* Dashboard Navigation Styles */
 .toggle {
   display: flex;
   justify-content: space-between;
-  background-color: #222;
-  border-radius: 30px;
+  /* background-color: #222; */
+  border-radius: 10px;
   padding: 3px;
+  width: 100%;
 }
 
 .toggle .tab {
   color: #ccc;
   background-color: transparent;
-  border-radius: 30px;
   border: none;
   padding: 5px;
   width: 100px;
 }
 
 .toggle .active {
-  background-color: greenyellow;
+  border-bottom: greenyellow 2px solid;
   color: #222;
 }
 
@@ -117,4 +132,28 @@ body {
 
 .budget-dashboard #income .add-income-btn {
   background-color: greenyellow;
+}
+
+/* Income List Styles*/
+
+.list {
+  width: 100%;
+}
+
+#income .income {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e7e9;
+  height: 50px;
+  padding: 12px;
+  border-radius: 15px;
+}
+
+.list-item-color {
+  background-color: lightgreen;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
 }
