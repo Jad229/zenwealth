@@ -137,6 +137,9 @@ body {
 /* Income List Styles*/
 
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
 }
 
@@ -145,7 +148,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e5e7e9;
+  background-color: #eee;
   height: 50px;
   padding: 12px;
   border-radius: 15px;

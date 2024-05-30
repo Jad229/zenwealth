@@ -74,14 +74,28 @@ export const updateUI = function () {
 
   ENTRY_LIST.forEach((entry) => {
     const listEl = createListElement(entry);
+    incomeList?.appendChild(listEl);
   });
 
   function createListElement(entry: Entry) {
     const listEl = document.createElement("li");
-    const titleEl = document.createElement("p");
+    const colorEl = document.createElement("div");
+    const titleEl = document.createElement("h3");
+    const amountEl = document.createElement("p");
 
     titleEl.innerText = entry.title;
+    amountEl.innerText = entry.amount.toString();
+
+    listEl.classList.add("income");
+    colorEl.classList.add("list-item-color");
+    titleEl.classList.add("list-item-title");
+    amountEl.classList.add("list-item-amount");
+
+    listEl.appendChild(colorEl);
     listEl.appendChild(titleEl);
+    listEl.appendChild(amountEl);
+
+    return listEl;
   }
 };
 
