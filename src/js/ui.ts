@@ -69,43 +69,48 @@ export const hide = function (elements: Array<HTMLElement | null>) {
 
 export const updateUI = function () {
   // guard against null element
-  if (incomeList) incomeList.innerHTML = "";
+  if (!incomeList) return;
 
+  // empty the incomeList element
+  incomeList.innerHTML = "";
+
+  // loop through the entries and create a list item
   ENTRY_LIST.forEach((entry) => {
     const listEl = createListElement(entry);
     incomeList?.appendChild(listEl);
   });
-
-  function createListElement(entry: Entry) {
-    const listEl = document.createElement("li");
-    const colorEl = document.createElement("div");
-    const titleEl = document.createElement("h3");
-    const amountEl = document.createElement("p");
-    const buttonsEl = document.createElement("div");
-    const editEl = document.createElement("button");
-    const deleteEl = document.createElement("button");
-
-    titleEl.innerText = entry.title;
-    amountEl.innerText = `$${entry.amount.toString()}`;
-
-    listEl.classList.add("income");
-    colorEl.classList.add("list-item-color");
-    titleEl.classList.add("list-item-title");
-    amountEl.classList.add("list-item-amount");
-    editEl.classList.add("list-item-edit");
-    deleteEl.classList.add("list-item-delete");
-    buttonsEl.classList.add("list-item-buttons");
-
-    buttonsEl.appendChild(editEl);
-    buttonsEl.appendChild(deleteEl);
-    listEl.appendChild(colorEl);
-    listEl.appendChild(titleEl);
-    listEl.appendChild(amountEl);
-    listEl.appendChild(buttonsEl);
-
-    return listEl;
-  }
 };
+
+function createListElement(entry: Entry) {
+  const listEl = createElementWithClass("li", "income");
+  const colorEl = createElementWithClass("div", "list-item-color");
+  const titleEl = createElementWithClass("h3", "list-item-title");
+  const amountEl = createElementWithClass("p", "list-item-amount");
+  const buttonsEl = createElementWithClass("div", "list-item-buttons");
+  const editEl = createElementWithClass("button", "list-item-edit");
+  const deleteEl = createElementWithClass("button", "list-item-delete");
+
+  titleEl.innerText = entry.title;
+  amountEl.innerText = `$${entry.amount.toString()}`;
+
+  buttonsEl.appendChild(editEl);
+  buttonsEl.appendChild(deleteEl);
+  listEl.appendChild(colorEl);
+  listEl.appendChild(titleEl);
+  listEl.appendChild(amountEl);
+  listEl.appendChild(buttonsEl);
+
+  return listEl;
+}
+
+function createElementWithClass(
+  elementTag: string,
+  className: string,
+): HTMLElement {
+  const element = document.createElement(elementTag);
+  element.classList.add(className);
+  return element;
+}
 
 export const clearInput = function (inputs: HTMLInputElement[]) {
   inputs?.forEach((input) => {
