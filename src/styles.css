@@ -149,14 +149,46 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #eee;
-  height: 50px;
+  height: 30px;
   padding: 12px;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .list-item-color {
   background-color: lightgreen;
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
   border-radius: 10px;
+}
+
+.list-item-title {
+  font-size: 0.8rem;
+}
+
+.list-item-amount {
+  font-size: 0.8rem;
+}
+
+.list-item-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 25%;
+}
+
+.list-item-edit,
+.list-item-delete {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.list-item-delete {
+  background-color: lightcoral;
+}
+.list-item-edit {
+  background-color: yellow;
 }

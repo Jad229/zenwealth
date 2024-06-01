@@ -1,7 +1,6 @@
 // ui.ts
 import { ENTRY_LIST } from "./data";
 import { Entry } from "./types";
-
 const balanceEl = document.querySelector<HTMLElement>(".balance .value");
 
 // Account elements
@@ -82,18 +81,27 @@ export const updateUI = function () {
     const colorEl = document.createElement("div");
     const titleEl = document.createElement("h3");
     const amountEl = document.createElement("p");
+    const buttonsEl = document.createElement("div");
+    const editEl = document.createElement("button");
+    const deleteEl = document.createElement("button");
 
     titleEl.innerText = entry.title;
-    amountEl.innerText = entry.amount.toString();
+    amountEl.innerText = `$${entry.amount.toString()}`;
 
     listEl.classList.add("income");
     colorEl.classList.add("list-item-color");
     titleEl.classList.add("list-item-title");
     amountEl.classList.add("list-item-amount");
+    editEl.classList.add("list-item-edit");
+    deleteEl.classList.add("list-item-delete");
+    buttonsEl.classList.add("list-item-buttons");
 
+    buttonsEl.appendChild(editEl);
+    buttonsEl.appendChild(deleteEl);
     listEl.appendChild(colorEl);
     listEl.appendChild(titleEl);
     listEl.appendChild(amountEl);
+    listEl.appendChild(buttonsEl);
 
     return listEl;
   }
