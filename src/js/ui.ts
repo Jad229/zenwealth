@@ -81,7 +81,7 @@ export const updateUI = function () {
   });
 };
 
-function createListElement(entry: Entry) {
+function createListElement(entry: Entry): HTMLLIElement {
   const listEl = createElementWithClass("li", "income");
   const colorEl = createElementWithClass("div", "list-item-color");
   const titleEl = createElementWithClass("h3", "list-item-title");
