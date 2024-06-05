@@ -3,3 +3,9 @@ export type Entry = {
   title: string;
   amount: number;
 };
+
+export type Budget = {
+  title: string;
+  cap: number;
+  category: string;
+};
