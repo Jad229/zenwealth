@@ -7,60 +7,54 @@
   <body>
     <div class="budget-container">
       <header class="budget-header">
-        <section class="balance">
-          <h2 class="title">Balance</h2>
-          <p class="value">$0</p>
-        </section>
-      </header>
-      <section class="account">
-        <section class="income">
-          <h2 class="title">Income</h2>
-          <p class="income-total">$0</p>
-        </section>
-        <div class="chart"></div>
-        <section class="outcome">
-          <h2 class="title">Outcome</h2>
-          <p class="outcome-total">$0</p>
-        </section>
-      </section>
-      <main class="budget-dashboard">
-        <div class="budget-dashboard--header">
-          <h1 class="dash-title">Dashboard</h1>
-          <nav class="toggle">
-            <button class="tab expense-tab">Expenses</button>
-            <button class="tab active income-tab">Income</button>
-            <button class="tab all-tab">All</button>
-          </nav>
+        <section><h3 class="date">Month - Year</h3></section>
+        <div class="stats">
+          <section class="balance">
+            <h2 class="title">Balance</h2>
+            <h1 class="value">$0</h1>
+          </section>
+          <section class="account">
+            <section class="income">
+              <h3 class="title">Income</h3>
+              <p class="income-total">$0</p>
+            </section>
+            <div class="chart"></div>
+            <section class="expense">
+              <h3 class="title">Expense</h3>
+              <p class="expense-total">$0</p>
+            </section>
+          </section>
         </div>
-        <section id="expense" class="hide"></section>
-        <section id="income">
-          <ul class="list">
-            <li id="0" class="income">
-              <div class="list-item-color"></div>
-              <h3 class="list-item-title">Income Title</h3>
-              <p class="list-item-amount">$100</p>
-            </li>
-          </ul>
-          <div class="input">
-            <input
-              class="income-title-input"
-              type="text"
-              name="incomeTitle"
-              id="incomeTitle"
-              placeholder="Title"
-            />
-            <input
-              class="income-amount-input"
-              type="number"
-              name="incomeAmount"
-              id="incomeAmount"
-              placeholder="$0"
-            />
-            <button class="add-income-btn">ADD</button>
+      </header>
+      <main class="budget-dashboard">
+        <h3 class="title">Budgets</h3>
+        <section class="budgets-container">
+          <div class="budget-card">
+            <p class="budget-title">Title</p>
+            <div class="chart"></div>
+            <p class="budget-total">$0 Remaining</p>
+          </div>
+          <div class="budget-card">
+            <p class="budget-title">Title</p>
+            <div class="chart"></div>
+            <p class="budget-total">$0 Remaining</p>
+          </div>
+          <div class="budget-card">
+            <p class="budget-title">Title</p>
+            <div class="chart"></div>
+            <p class="budget-total">$0 Remaining</p>
           </div>
         </section>
-        <section id="all" class="hide"></section>
       </main>
     </div>
+    <footer>
+      <nav class="bottom-nav">
+        <button class="add-entry-button">+</button>
+        <ul class="nav-items">
+          <li class="nav-item">Home</li>
+          <li class="nav-item">Transactions</li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
