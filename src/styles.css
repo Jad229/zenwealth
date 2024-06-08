@@ -7,7 +7,7 @@
   --background-color: #222;
   --text-dark: #222;
   --text-light: #fff;
-  --h1: bold 53px/63px var(--ff);
+  --h1: 500 53px/63px var(--ff);
   --h2: 400 30px/40px var(--ff);
   --h3: 400 23px/33px var(--ff);
   --p: 400 16px/26px var(--ff);
@@ -42,6 +42,7 @@ body {
 }
 
 .budget-container {
+  overflow-y: scroll;
   background-color: var(--background-color);
   padding: 12px;
   display: flex;
@@ -88,7 +89,6 @@ body {
 /* Dashboard Styles */
 
 .budgets-container {
-  overflow: scroll;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
