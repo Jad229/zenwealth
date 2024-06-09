@@ -1,6 +1,6 @@
-// ui.ts
 import { ENTRY_LIST } from "./data";
 import { Entry } from "./types";
+
 const balanceEl = document.querySelector<HTMLElement>(".balance .value");
 
 // Account elements
@@ -81,7 +81,7 @@ export const updateUI = function () {
   });
 };
 
-function createListElement(entry: Entry): HTMLLIElement {
+function createListElement(entry: Entry): HTMLElement {
   const listEl = createElementWithClass("li", "income");
   const colorEl = createElementWithClass("div", "list-item-color");
   const titleEl = createElementWithClass("h3", "list-item-title");

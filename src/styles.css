@@ -71,6 +71,7 @@ body {
   color: var(--text-dark);
   background-color: var(--colorprimary);
   border-radius: var(--border-radius);
+  box-shadow: #222 0 0 10px;
 }
 .budget-header .balance {
   width: 100%;
@@ -110,29 +111,48 @@ body {
   border-radius: 10px;
   width: 168px;
   height: 170px;
+  box-shadow: #111 0 0 10px;
 }
 
 /* Footer Styles */
 
 .bottom-nav {
-  margin: auto;
-  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--text-dark);
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
-  left: 0;
   width: var(--max-width);
   height: 80px;
   background-color: #fff;
   border-radius: 10px 10px 0 0;
 }
 
+.nav-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.3%;
+}
+
 .add-entry-button {
-  position: relative;
-  left: 160px;
-  transform: translateY(-50%);
   background-color: var(--colorprimary);
   border: none;
   width: 75px;
   height: 75px;
+  font-size: 30px;
   border-radius: 50%;
   box-shadow: #333 0 0 5px;
+  transform: translateY(-50%);
 }
