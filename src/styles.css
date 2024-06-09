@@ -12,6 +12,7 @@
   --h3: 400 23px/33px var(--ff);
   --p: 400 16px/26px var(--ff);
   --border-radius: 10px;
+  --max-width: 390px;
 }
 h1 {
   font: var(--h1);
@@ -42,12 +43,13 @@ body {
 }
 
 .budget-container {
+  position: relative;
   overflow-y: scroll;
   background-color: var(--background-color);
-  padding: 12px;
   display: flex;
+  padding: 12px;
   flex-direction: column;
-  width: 390px;
+  width: var(--max-width);
   height: 100vh;
   margin: auto;
 }
@@ -108,4 +110,29 @@ body {
   border-radius: 10px;
   width: 168px;
   height: 170px;
+}
+
+/* Footer Styles */
+
+.bottom-nav {
+  margin: auto;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: var(--max-width);
+  height: 80px;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.add-entry-button {
+  position: relative;
+  left: 160px;
+  transform: translateY(-50%);
+  background-color: var(--colorprimary);
+  border: none;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: #333 0 0 5px;
 }
