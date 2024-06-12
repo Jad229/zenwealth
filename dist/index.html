@@ -26,15 +26,29 @@
           </section>
         </div>
       </header>
+
+      <!-- Dashboard  -->
       <main class="budget-dashboard">
         <h3 class="title">Budgets</h3>
         <section class="budgets-container"></section>
       </main>
       <div id="entryMenu" class="menu-modal hidden">
-        <button class="budget-entry">New Income</button>
-        <button class="income-entry">New Budget</button>
-        <button class="expense-entry">New Expense</button>
+        <button class="add-income-btn button">New Income</button>
+        <button class="add-budget-btn button">New Budget</button>
+        <button class="add-expense-btn button">New Expense</button>
       </div>
+
+      <!-- Forms -->
+      <form id="incomeForm" class="hidden">
+        <!-- Income form fields -->
+      </form>
+      <form id="budgetForm" class="hidden">
+        <!-- Budget form fields -->
+      </form>
+      <form id="expenseForm" class="hidden">
+        <!-- Expense form fields -->
+      </form>
+
       <div id="overlay" class="hidden"></div>
     </div>
     <nav class="bottom-nav">

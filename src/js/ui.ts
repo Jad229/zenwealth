@@ -12,6 +12,9 @@ const chartEl = select<HTMLDivElement>(".chart");
 
 //Entry Selection Elements
 export const containerEntryMenu = select<HTMLDivElement>("#entryMenu");
+export const buttonAddIncome = select<HTMLButtonElement>(".add-income-btn");
+export const buttonAddBudget = select<HTMLButtonElement>(".add-budget-btn");
+export const buttonAddExpense = select<HTMLButtonElement>(".add-expense-btn");
 
 // Navigation Elements
 export const buttonEntry = select<HTMLButtonElement>(".add-entry-button");
