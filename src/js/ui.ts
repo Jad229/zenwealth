@@ -9,6 +9,13 @@ export const budgetForm = select<HTMLFormElement>("#budgetForm");
 export const incomeForm = select<HTMLFormElement>("#incomeForm");
 export const expenseForm = select<HTMLFormElement>("#expenseForm");
 
+// Inputs
+export const inputBudgetTitle = select<HTMLInputElement>("#budgetTitle");
+export const inputBudgetAmount = select<HTMLInputElement>("#budgetAmount");
+
+// Buttons
+export const buttonBudgetSubmit = select<HTMLButtonElement>("#budgetSubmit");
+
 // Account elements
 const balanceEl = select<HTMLElement>(".balance .value");
 const outcomeTotalEl = select<HTMLParagraphElement>(".income-total");

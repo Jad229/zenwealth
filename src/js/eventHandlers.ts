@@ -3,10 +3,13 @@ import {
   buttonAddBudget,
   buttonAddExpense,
   buttonAddIncome,
+  buttonBudgetSubmit,
   buttonEntry,
   containerEntryMenu,
   expenseForm,
   incomeForm,
+  inputBudgetAmount,
+  inputBudgetTitle,
   overlay,
 } from "./ui";
 
@@ -33,4 +36,15 @@ buttonAddIncome.addEventListener("click", () => {
 
 buttonAddExpense.addEventListener("click", () => {
   alert("click");
+});
+
+buttonBudgetSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const newBudget = {
+    title: inputBudgetTitle.value,
+    amount: inputBudgetAmount.value,
+  };
+
+  console.log(newBudget);
 });
