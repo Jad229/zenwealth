@@ -7,5 +7,5 @@ export type Entry = {
 export type Budget = {
   title: string;
   amount: number;
-  category: string;
+  category?: string;
 };

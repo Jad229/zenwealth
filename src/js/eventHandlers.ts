@@ -42,9 +42,9 @@ buttonAddExpense.addEventListener("click", () => {
 buttonBudgetSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   const title = inputBudgetTitle.value;
-  const amount = inputBudgetAmount.value;
+  const amount = parseInt(inputBudgetAmount.value);
 
-  createBudget(title, amount, "food");
+  const newBudget = createBudget(title, amount);
 
   console.log(newBudget);
 });

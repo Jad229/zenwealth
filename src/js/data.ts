@@ -27,7 +27,7 @@ export function deleteEntry(index: number) {
 export function createBudget(
   title: string,
   amount: number,
-  category: string,
+  category?: string,
 ): Budget {
   const newBudget: Budget = {
     title,
