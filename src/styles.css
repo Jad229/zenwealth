@@ -56,6 +56,11 @@ body {
   margin: auto;
 }
 
+.menu-modal,
+form {
+  z-index: 2;
+}
+
 #overlay {
   position: fixed;
   top: 0;
@@ -177,12 +182,28 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  z-index: 2;
   background-color: var(--colorsecondary);
   height: 200px;
   border-radius: var(--border-radius);
 }
 
+/* Forms */
+form {
+  display: flex;
+  padding: 12px;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: var(--border-radius);
+}
+
+#budgetForm {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: var(--colorsecondary);
+}
 .hidden {
   display: none;
 }

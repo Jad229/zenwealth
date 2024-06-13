@@ -1,8 +1,13 @@
 import { ENTRY_LIST } from "./data";
 import { Entry } from "./types";
 
-/* Elements */
+// Elements
 export const overlay = select<HTMLDivElement>("#overlay");
+
+// Forms
+export const budgetForm = select<HTMLFormElement>("#budgetForm");
+export const incomeForm = select<HTMLFormElement>("#incomeForm");
+export const expenseForm = select<HTMLFormElement>("#expenseForm");
 
 // Account elements
 const balanceEl = select<HTMLElement>(".balance .value");
