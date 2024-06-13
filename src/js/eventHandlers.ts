@@ -1,3 +1,4 @@
+import { createBudget } from "./data";
 import {
   budgetForm,
   buttonAddBudget,
@@ -40,11 +41,10 @@ buttonAddExpense.addEventListener("click", () => {
 
 buttonBudgetSubmit.addEventListener("click", (e) => {
   e.preventDefault();
+  const title = inputBudgetTitle.value;
+  const amount = inputBudgetAmount.value;
 
-  const newBudget = {
-    title: inputBudgetTitle.value,
-    amount: inputBudgetAmount.value,
-  };
+  createBudget(title, amount, "food");
 
   console.log(newBudget);
 });

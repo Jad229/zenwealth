@@ -26,12 +26,12 @@ export function deleteEntry(index: number) {
 // Budget Functions
 export function createBudget(
   title: string,
-  cap: number,
+  amount: number,
   category: string,
 ): Budget {
   const newBudget: Budget = {
     title,
-    cap,
+    amount,
     category,
   };
 

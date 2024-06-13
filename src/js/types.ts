@@ -6,6 +6,6 @@ export type Entry = {
 
 export type Budget = {
   title: string;
-  cap: number;
+  amount: number;
   category: string;
 };
