@@ -1,5 +1,6 @@
-import { createBudget } from "./data";
+import { addBudget, createBudget } from "./data";
 import {
+  UpdateBudgetUI,
   budgetForm,
   buttonAddBudget,
   buttonAddExpense,
@@ -41,10 +42,20 @@ buttonAddExpense.addEventListener("click", () => {
 
 buttonBudgetSubmit.addEventListener("click", (e) => {
   e.preventDefault();
+
+  // Grabs input values
   const title = inputBudgetTitle.value;
   const amount = parseInt(inputBudgetAmount.value);
 
   const newBudget = createBudget(title, amount);
 
-  console.log(newBudget);
+  // add budget to list
+  addBudget(newBudget);
+
+  // update UI to reflect changes
+  UpdateBudgetUI(title, amount);
+
+  // Close modal
+  budgetForm.classList.add("hidden");
+  overlay.classList.add("hidden");
 });

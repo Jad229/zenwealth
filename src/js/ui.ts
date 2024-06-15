@@ -1,4 +1,4 @@
-import { ENTRY_LIST } from "./data";
+import { BUDGET_LIST, ENTRY_LIST } from "./data";
 import { Entry } from "./types";
 
 // Elements
@@ -32,7 +32,28 @@ export const buttonAddExpense = select<HTMLButtonElement>(".add-expense-btn");
 export const buttonEntry = select<HTMLButtonElement>(".add-entry-button");
 
 //Budget Elements
-const container = select<HTMLElement>(".budget-dashboard");
+const containerBudgets = select<HTMLElement>(".budgets-container");
+
+// UI Functions
+
+export function UpdateBudgetUI(title: string, remainingAmount: number) {
+  containerBudgets.innerHTML = "";
+  BUDGET_LIST.forEach((budget, i) => {
+    const cardBudgetEl = createElementWithClass("div", "budget-card");
+    const budgetTitleEl = createElementWithClass("p", "budget-title");
+    const budgetChartEl = createElementWithClass("div", "budget-chart");
+    const budgetRemainingEl = createElementWithClass("p", "budget-remaining");
+
+    budgetTitleEl.textContent = title;
+    budgetRemainingEl.textContent = remainingAmount.toString();
+
+    cardBudgetEl.appendChild(budgetTitleEl);
+    cardBudgetEl.appendChild(budgetChartEl);
+    cardBudgetEl.appendChild(budgetRemainingEl);
+
+    containerBudgets.appendChild(cardBudgetEl);
+  });
+}
 
 // Custom function to select elements for readability
 function select<Type>(query: string): Type {
