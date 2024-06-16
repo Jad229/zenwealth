@@ -36,7 +36,7 @@ const containerBudgets = select<HTMLElement>(".budgets-container");
 
 // UI Functions
 
-export function UpdateBudgetUI(title: string, remainingAmount: number) {
+export function UpdateBudgetUI() {
   containerBudgets.innerHTML = "";
   BUDGET_LIST.forEach((budget, i) => {
     const cardBudgetEl = createElementWithClass("div", "budget-card");
@@ -44,8 +44,8 @@ export function UpdateBudgetUI(title: string, remainingAmount: number) {
     const budgetChartEl = createElementWithClass("div", "budget-chart");
     const budgetRemainingEl = createElementWithClass("p", "budget-remaining");
 
-    budgetTitleEl.textContent = title;
-    budgetRemainingEl.textContent = remainingAmount.toString();
+    budgetTitleEl.textContent = budget.title;
+    budgetRemainingEl.textContent = budget.amount.toString();
 
     cardBudgetEl.appendChild(budgetTitleEl);
     cardBudgetEl.appendChild(budgetChartEl);

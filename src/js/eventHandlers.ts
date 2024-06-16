@@ -53,7 +53,7 @@ buttonBudgetSubmit.addEventListener("click", (e) => {
   addBudget(newBudget);
 
   // update UI to reflect changes
-  UpdateBudgetUI(title, amount);
+  UpdateBudgetUI();
 
   // Close modal
   budgetForm.classList.add("hidden");
