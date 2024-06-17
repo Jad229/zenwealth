@@ -7,29 +7,26 @@ import {
   buttonAddIncome,
   buttonBudgetSubmit,
   buttonEntry,
+  closeModal,
   containerEntryMenu,
   expenseForm,
   incomeForm,
   inputBudgetAmount,
   inputBudgetTitle,
+  openModalWithContent,
   overlay,
 } from "./ui";
 
 buttonEntry.addEventListener("click", () => {
-  overlay.classList.remove("hidden");
-  containerEntryMenu.classList.remove("hidden");
+  openModalWithContent(containerEntryMenu);
 });
 
 overlay.addEventListener("click", () => {
-  containerEntryMenu.classList.add("hidden");
-  overlay.classList.add("hidden");
-  budgetForm.classList.add("hidden");
+  closeModal();
 });
 
 buttonAddBudget.addEventListener("click", () => {
-  overlay.classList.remove("hidden");
-  budgetForm.classList.remove("hidden");
-  containerEntryMenu.classList.add("hidden");
+  openModalWithContent(budgetForm);
 });
 
 buttonAddIncome.addEventListener("click", () => {
@@ -56,6 +53,5 @@ buttonBudgetSubmit.addEventListener("click", (e) => {
   UpdateBudgetUI();
 
   // Close modal
-  budgetForm.classList.add("hidden");
-  overlay.classList.add("hidden");
+  closeModal();
 });

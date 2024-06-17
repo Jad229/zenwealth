@@ -56,6 +56,7 @@ body {
   margin: auto;
 }
 
+/* Modal Styles */
 .menu-modal,
 form {
   z-index: 2;
@@ -72,6 +73,19 @@ form {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   z-index: 1;
+}
+
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-inline: auto;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+  background-color: var(--colorsecondary);
+  height: 300px;
+  width: 380px;
+  border-radius: var(--border-radius);
 }
 
 /* Header Styles */
@@ -183,8 +197,8 @@ form {
   justify-content: space-around;
   align-items: center;
   background-color: var(--colorsecondary);
-  height: 200px;
   border-radius: var(--border-radius);
+  height: 100%;
 }
 
 /* Forms */
@@ -204,6 +218,15 @@ form {
   transform: translateY(-50%);
   background-color: var(--colorsecondary);
 }
+
 .hidden {
   display: none;
+}
+
+/* Button Styles */
+button {
+  height: 100px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
 }

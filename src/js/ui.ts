@@ -3,6 +3,7 @@ import { Entry } from "./types";
 
 // Elements
 export const overlay = select<HTMLDivElement>("#overlay");
+export const modal = select<HTMLDivElement>("#modal");
 
 // Forms
 export const budgetForm = select<HTMLFormElement>("#budgetForm");
@@ -38,11 +39,17 @@ const containerBudgets = select<HTMLElement>(".budgets-container");
 
 export function UpdateBudgetUI() {
   containerBudgets.innerHTML = "";
-  BUDGET_LIST.forEach((budget, i) => {
+  BUDGET_LIST.forEach((budget, idx) => {
     const cardBudgetEl = createElementWithClass("div", "budget-card");
     const budgetTitleEl = createElementWithClass("p", "budget-title");
     const budgetChartEl = createElementWithClass("div", "budget-chart");
     const budgetRemainingEl = createElementWithClass("p", "budget-remaining");
+
+    cardBudgetEl.dataset.index = `${idx}`;
+
+    cardBudgetEl.addEventListener("click", () => {
+      openModalWithContent(budgetForm);
+    });
 
     budgetTitleEl.textContent = budget.title;
     budgetRemainingEl.textContent = budget.amount.toString();
@@ -75,3 +82,22 @@ export const clearInput = function (inputs: HTMLInputElement[]) {
     input.value = "";
   });
 };
+
+export function openModalWithContent(content: HTMLElement) {
+  // Injects html content into the modal
+  modal.appendChild(content);
+
+  // Makes the modal and content visible
+  content.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  modal.classList.remove("hidden");
+}
+
+export function closeModal() {
+  // Clears the modal of content when closing
+  modal.innerHTML = "";
+
+  // Makes overlay and modal invisible
+  overlay.classList.add("hidden");
+  modal.classList.add("hidden");
+}
