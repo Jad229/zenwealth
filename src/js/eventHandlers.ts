@@ -1,4 +1,4 @@
-import { addBudget, createBudget } from "./data";
+import { addBudget, createBudget, updateBudget } from "./data";
 import {
   UpdateBudgetUI,
   budgetForm,
@@ -6,6 +6,7 @@ import {
   buttonAddExpense,
   buttonAddIncome,
   buttonBudgetSubmit,
+  buttonEditBudgetSubmit,
   buttonEntry,
   closeModal,
   containerEntryMenu,
@@ -13,6 +14,8 @@ import {
   incomeForm,
   inputBudgetAmount,
   inputBudgetTitle,
+  inputEditBudgetAmount,
+  inputEditBudgetTitle,
   openModalWithContent,
   overlay,
 } from "./ui";
@@ -35,6 +38,29 @@ buttonAddIncome.addEventListener("click", () => {
 
 buttonAddExpense.addEventListener("click", () => {
   alert("click");
+});
+
+buttonEditBudgetSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Grabs id of budget to updated from button dataset
+  const id = parseInt(buttonEditBudgetSubmit.dataset.id as string);
+
+  // Grabs input values
+  const title = inputEditBudgetTitle.value;
+  const amount = parseInt(inputEditBudgetAmount.value);
+
+  // Updated budget
+  const updatedBudget = createBudget(title, amount);
+
+  // updates budget in list
+  updateBudget(id, updatedBudget);
+
+  // update UI to reflect changes
+  UpdateBudgetUI();
+
+  // Close modal
+  closeModal();
 });
 
 buttonBudgetSubmit.addEventListener("click", (e) => {

@@ -1,4 +1,4 @@
-import { BUDGET_LIST, ENTRY_LIST } from "./data";
+import { BUDGET_LIST, ENTRY_LIST, getBudget } from "./data";
 import { Entry } from "./types";
 
 // Elements
@@ -9,13 +9,20 @@ export const modal = select<HTMLDivElement>("#modal");
 export const budgetForm = select<HTMLFormElement>("#budgetForm");
 export const incomeForm = select<HTMLFormElement>("#incomeForm");
 export const expenseForm = select<HTMLFormElement>("#expenseForm");
+export const editBudgetForm = select<HTMLFormElement>("#editBudgetForm");
 
 // Inputs
 export const inputBudgetTitle = select<HTMLInputElement>("#budgetTitle");
 export const inputBudgetAmount = select<HTMLInputElement>("#budgetAmount");
+export const inputEditBudgetAmount =
+  select<HTMLInputElement>("#editBudgetAmount");
+export const inputEditBudgetTitle =
+  select<HTMLInputElement>("#editBudgetTitle");
 
 // Buttons
 export const buttonBudgetSubmit = select<HTMLButtonElement>("#budgetSubmit");
+export const buttonEditBudgetSubmit =
+  select<HTMLButtonElement>("#editBudgetSubmit");
 
 // Account elements
 const balanceEl = select<HTMLElement>(".balance .value");
@@ -48,7 +55,14 @@ export function UpdateBudgetUI() {
     cardBudgetEl.dataset.index = `${idx}`;
 
     cardBudgetEl.addEventListener("click", () => {
-      openModalWithContent(budgetForm);
+      const budget = getBudget(idx);
+
+      inputEditBudgetAmount.value = `${budget.amount}`;
+      inputEditBudgetTitle.value = `${budget.title}`;
+
+      buttonEditBudgetSubmit.dataset.id = `${idx}`;
+
+      openModalWithContent(editBudgetForm);
     });
 
     budgetTitleEl.textContent = budget.title;

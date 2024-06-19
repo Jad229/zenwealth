@@ -39,10 +39,25 @@
       </div>
 
       <!-- Forms -->
+      <!-- Income Forms -->
       <form id="incomeForm" class="hidden">
         <!-- Income form fields -->
       </form>
+      <!-- Budget Forms -->
+      <form id="editBudgetForm" class="hidden">
+        <h2>Update Budget</h2>
+        <!-- Budget form fields -->
+        <label for="">Budget Title</label>
+        <input type="text" name="budgetTitle" id="editBudgetTitle" />
+
+        <label for="budgetAmount">Amount</label>
+        <input type="number" name="budgetAmount" id="editBudgetAmount" />
+
+        <button id="editBudgetSubmit">Update Budget</button>
+      </form>
+
       <form id="budgetForm" class="hidden">
+        <h2>New Budget</h2>
         <!-- Budget form fields -->
         <label for="">Budget Title</label>
         <input type="text" name="budgetTitle" id="budgetTitle" />
@@ -52,6 +67,8 @@
 
         <button id="budgetSubmit">Create Budget</button>
       </form>
+
+      <!-- Expense Forms -->
       <form id="expenseForm" class="hidden">
         <!-- Expense form fields -->
       </form>

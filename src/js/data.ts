@@ -47,6 +47,10 @@ export function getBudgets(): Budget[] {
   return BUDGET_LIST;
 }
 
+export function getBudget(index: number) {
+  return BUDGET_LIST[index];
+}
+
 export function updateBudget(index: number, updatedBudget: Budget) {
   BUDGET_LIST[index] = updatedBudget;
   saveBudgetsToLocalStorage();
